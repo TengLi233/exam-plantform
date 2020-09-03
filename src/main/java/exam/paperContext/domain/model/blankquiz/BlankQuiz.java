@@ -34,10 +34,16 @@ public class BlankQuiz implements Entity<BlankQuiz> {
     }
 
     public static BlankQuiz create(String teacherId, String content, String referenceAnswer, int score) {
-        BlankQuiz blankQuiz = new BlankQuiz(teacherId, content, referenceAnswer, score);
-        return blankQuiz;
+        return new BlankQuiz(teacherId, content, referenceAnswer, score);
     }
 
+    public void revise(String teacherId, String content, String referenceAnswer, int score) {
+        this.teacherId = teacherId;
+        this.content = content;
+        this.referenceAnswer = referenceAnswer;
+        this.score = score;
+        this.updatedTime = LocalDateTime.now();
+    }
 
     @Override
     public boolean sameIdentityAs(BlankQuiz other) {

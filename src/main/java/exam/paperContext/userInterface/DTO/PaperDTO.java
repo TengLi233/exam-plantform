@@ -1,4 +1,4 @@
-package exam.paperContext.userInterface;
+package exam.paperContext.userInterface.DTO;
 
 import exam.paperContext.domain.model.paper.PaperId;
 import lombok.AllArgsConstructor;

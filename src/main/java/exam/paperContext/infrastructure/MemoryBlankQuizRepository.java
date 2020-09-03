@@ -3,13 +3,14 @@ package exam.paperContext.infrastructure;
 import exam.paperContext.domain.model.blankquiz.BlankQuiz;
 import exam.paperContext.domain.model.blankquiz.BlankQuizId;
 import exam.paperContext.domain.model.blankquiz.BlankQuizRepository;
-import exam.paperContext.domain.model.paper.Paper;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@Repository
 public class MemoryBlankQuizRepository implements BlankQuizRepository {
     private Set<BlankQuiz> blankQuizList = new HashSet<>();
 
@@ -22,8 +23,9 @@ public class MemoryBlankQuizRepository implements BlankQuizRepository {
     }
 
     @Override
-    public void save(BlankQuiz blankQuiz) {
+    public BlankQuiz save(BlankQuiz blankQuiz) {
         this.blankQuizList.add(blankQuiz);
+        return blankQuiz;
     }
 
     @Override

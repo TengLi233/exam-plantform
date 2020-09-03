@@ -7,7 +7,7 @@ public interface BlankQuizRepository {
 
     List<BlankQuiz> getAll();
 
-    void save(BlankQuiz blankQuiz);
+    BlankQuiz save(BlankQuiz blankQuiz);
 
     void delete(BlankQuiz blankQuiz);
 
